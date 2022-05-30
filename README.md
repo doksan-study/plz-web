@@ -26,14 +26,20 @@ sample
 
 ## Tech Stack
 
+<div>
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
 <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white"/>
+</div>
 
+<div>
 <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=Redux&logoColor=white"/>
 <img src="https://img.shields.io/badge/Redux_Saga-999999?style=flat-square&logo=Redux-saga&logoColor=white"/>
 <img src="https://img.shields.io/badge/Redux_Query-FF4154?style=flat-square&logo=React-Query&logoColor=white"/>
+</div>
 
+<div>
 <img src="https://img.shields.io/badge/MUI-007FFF?style=flat-square&logo=MUI&logoColor=white"/>
 <img src="https://img.shields.io/badge/Styled_Components-DB7093?style=flat-square&logo=styled-components&logoColor=white"/>
+</div>
 
 <br>
