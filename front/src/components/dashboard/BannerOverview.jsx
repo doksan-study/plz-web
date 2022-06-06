@@ -7,14 +7,18 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import { useRouter } from 'next/router';
 
 const BannerOverview = () => {
+  const router = useRouter();
+
   return (
     <>
       <Card
         sx={{
           display: 'flex',
           height: 450,
+          cursor: 'pointer',
         }}
       >
         <Box
