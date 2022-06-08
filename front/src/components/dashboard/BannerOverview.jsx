@@ -8,6 +8,9 @@ import {
   Typography,
 } from '@mui/material';
 import { useRouter } from 'next/router';
+import webShoppingSVG from '/public/static/web_shopping.svg';
+
+import Image from 'next/image';
 
 const BannerOverview = () => {
   const router = useRouter();
@@ -18,38 +21,52 @@ const BannerOverview = () => {
         sx={{
           display: 'flex',
           height: 450,
-          cursor: 'pointer',
         }}
       >
+        {/* <CardMedia
+          component={'img'}
+          // sx={{ width: '500', objectFit: 'contain' }}
+          image={`${webShoppingSVG}`}
+          alt={webShoppingSVG}
+          // src={require(`/public/static/web_shopping.svg`)}
+        /> */}
+
+        <Image
+          src={webShoppingSVG}
+          alt='web Shopping'
+          style={{ objectFit: 'contain' }}
+        />
+
         <Box
           sx={{
-            width: '50%',
+            width: '40%',
             display: 'flex',
             justifyContent: 'flex-start',
             alignItems: 'center',
           }}
         >
           <CardContent>
-            <Typography variant='h1'>SHOES</Typography>
+            <Typography variant='h1'>
+              ONLINE <br />
+              SHOPPING
+            </Typography>
             <Button
               color='secondary'
               size='large'
               variant='contained'
               sx={{
+                padding: '1rem 3rem ',
                 mt: 3,
                 borderRadius: '16px',
               }}
+              onClick={() => {
+                router.push(`/product/create`);
+              }}
             >
-              Shop by Category
+              ADD
             </Button>
           </CardContent>
         </Box>
-        <CardMedia
-          component={'img'}
-          sx={{ width: '50%', objectFit: 'contain' }}
-          image='https://www.street.co.kr/wp-content/uploads/2021/04/https___kr.hypebeast.com_files_2020_12_air-jordan-1-ko-chicago-da9089-100-release-info-3.jpg'
-          alt='https://www.street.co.kr/wp-content/uploads/2021/04/https___kr.hypebeast.com_files_2020_12_air-jordan-1-ko-chicago-da9089-100-release-info-3.jpg'
-        />
       </Card>
     </>
   );
