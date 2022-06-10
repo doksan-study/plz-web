@@ -15,13 +15,14 @@ const ProductOverview = () => {
   const router = useRouter();
 
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={2}>
       {shoes.map((data, i) => {
         return (
           <Grid item xs={6} md={4}>
             <Card
               sx={{
                 cursor: "pointer",
+                height: "450px",
               }}
               onClick={() => {
                 router.push({
@@ -45,7 +46,9 @@ const ProductOverview = () => {
                   mt: 2,
                 }}
               >
-                <Typography variant="h4">{data.description}</Typography>
+                <Typography variant="h4" mb={1}>
+                  {data.description}
+                </Typography>
                 <Typography variant="body1" color="text.secondary">
                   {data.cost?.toLocaleString("ko-KR")}원
                 </Typography>
