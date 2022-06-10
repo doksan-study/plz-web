@@ -1,15 +1,15 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Head from 'next/head';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { CacheProvider } from '@emotion/react';
-import theme from '../src/theme/theme';
-import createEmotionCache from '../src/createEmotionCache';
-import FullLayout from '../src/layouts/FullLayout';
-import '../styles/style.css';
+import * as React from "react";
+import PropTypes from "prop-types";
+import Head from "next/head";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { CacheProvider } from "@emotion/react";
+import theme from "../src/theme/theme";
+import createEmotionCache from "../src/createEmotionCache";
+import FullLayout from "../src/layouts/FullLayout";
+import "../styles/style.css";
 
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 
@@ -21,13 +21,13 @@ export default function MyApp(props) {
 
   return (
     <>
-      <QueryClientProvider client={qeuryClient}>
+      <QueryClientProvider client={queryClient}>
         <CacheProvider value={emotionCache}>
           <Head>
             <title>Please Web</title>
             <meta
-              name='viewport'
-              content='initial-scale=1, width=device-width'
+              name="viewport"
+              content="initial-scale=1, width=device-width"
             />
           </Head>
           <ThemeProvider theme={theme}>
