@@ -5,6 +5,7 @@ import ProductPerfomance from "../src/components/dashboard/ProductPerfomance";
 import ProductOverview from "../src/components/dashboard/ProductOverview";
 import BannerOverview from "../src/components/dashboard/BannerOverview";
 import Footer from "../src/layouts/footer/Footer";
+import CategoryOverview from "../src/components/dashboard/CategoryOverview";
 
 export default function Index() {
   return (
@@ -18,7 +19,7 @@ export default function Index() {
       {/* ------------------------- row 1 ------------------------- */}
       <Grid item xs={12} lg={12}>
         {/* 카테고리? */}
-        <Card
+        {/* <Card
           style={{
             display: "flex",
             justifyContent: "center",
@@ -28,7 +29,8 @@ export default function Index() {
           }}
         >
           카테고리 넣넣
-        </Card>
+        </Card> */}
+        <CategoryOverview />
       </Grid>
 
       <Grid item xs={12} lg={12}>
@@ -37,6 +39,7 @@ export default function Index() {
         {/* <ProductPerfomance /> */}
         {/* <BlogCard /> */}
       </Grid>
+
       <Grid item xs={12} lg={12}>
         <Footer />
       </Grid>

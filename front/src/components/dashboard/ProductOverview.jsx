@@ -18,7 +18,7 @@ const ProductOverview = () => {
     <Grid container spacing={2}>
       {shoes.map((data, i) => {
         return (
-          <Grid item xs={6} md={4}>
+          <Grid item xs={6} md={4} key={data.id}>
             <Card
               sx={{
                 cursor: "pointer",
