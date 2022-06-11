@@ -9,7 +9,7 @@ function productListAPI() {
 // 상품 상세 정보
 function productDetailAPI(id) {
   console.log('요청하는 api=======', `/product/${id}`);
-  return product.get(`/list/${id}`);
+  return product.get(`/${id}`);
 }
 
 // 상품 등록

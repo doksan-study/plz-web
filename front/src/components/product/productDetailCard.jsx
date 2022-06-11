@@ -11,33 +11,12 @@ import {
 
 import Slider from 'react-slick';
 
-const ProductDetailCard = () => {
-  const slides = [
-    {
-      id: 1,
-      image:
-        'https://i.pinimg.com/564x/81/60/03/8160038f95c8c4b09949246aac5a14a6.jpg',
-    },
-    {
-      id: 2,
-      image:
-        'https://i.pinimg.com/564x/d5/3b/ef/d53bef6aae2bad1eb1746a0edd70de14.jpg',
-    },
-    {
-      id: 3,
-      image:
-        'https://i.pinimg.com/564x/71/61/b6/7161b6140c5cf22284d9613750ca2650.jpg',
-    },
-  ];
+import { useProductDetail } from '../../../hooks/product';
 
-  // TODO: Slider settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+const ProductDetailCard = ({ productId }) => {
+  const { isLoading, data } = useProductDetail(productId);
+
+  console.log('나와===============', data);
 
   return (
     <Card sx={{ p: 3 }}>
@@ -45,9 +24,9 @@ const ProductDetailCard = () => {
         <Grid item xs={12} lg={5}>
           <>
             <div>테스트 slider</div>
-            <Slider {...settings}>
-              <div></div>
-            </Slider>
+            {/* <Slider {...settings}> */}
+            <div></div>
+            {/* </Slider> */}
           </>
 
           {/* <CardMedia

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ProductDetailCard from '../../src/components/product/productDetailCard';
+import { useRouter } from 'next/router';
 
 import {
   Card,
@@ -12,7 +12,12 @@ import {
 } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 
+import ProductDetailCard from '../../src/components/product/productDetailCard';
+
 const ProductDetail = () => {
+  const router = useRouter();
+  const productId = router.query.id;
+
   // TODO: 탭
   const [value, setValue] = useState('1');
   const onChageValue = (event, newValue) => {
@@ -22,10 +27,11 @@ const ProductDetail = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <ProductDetailCard />
+        <ProductDetailCard productId={productId} />
       </Grid>
 
       <Grid item xs={12}>
+        {/* TODO: 탭 컴포넌트로 구분 */}
         <Card sx={{ p: 3 }}>
           <Box sx={{ width: '100%', typography: 'body1' }}>
             <TabContext value={value}>
