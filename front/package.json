@@ -19,7 +19,8 @@
     "react-apexcharts": "^1.4.0",
     "react-dom": "18.1.0",
     "react-query": "^3.39.1",
-    "react-slick": "^0.29.0"
+    "react-slick": "^0.29.0",
+    "swiper": "^8.2.3"
   },
   "scripts": {
     "dev": "next",

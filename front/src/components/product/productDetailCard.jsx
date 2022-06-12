@@ -14,9 +14,9 @@ import Slider from 'react-slick';
 import { useProductDetail } from '../../../hooks/product';
 
 const ProductDetailCard = ({ productId }) => {
-  const { isLoading, data } = useProductDetail(productId);
-
-  console.log('나와===============', data);
+  // FIXME: 잠시 주석
+  // const { isLoading, data } = useProductDetail(productId);
+  // console.log('나와===============', data);
 
   return (
     <Card sx={{ p: 3 }}>
@@ -24,16 +24,8 @@ const ProductDetailCard = ({ productId }) => {
         <Grid item xs={12} lg={5}>
           <>
             <div>테스트 slider</div>
-            {/* <Slider {...settings}> */}
             <div></div>
-            {/* </Slider> */}
           </>
-
-          {/* <CardMedia
-            component="img"
-            image="https://5.imimg.com/data5/HL/HS/ZC/SELLER-17552598/nike-airmax-tube-shoes-1000x1000.jpg"
-            alt="https://5.imimg.com/data5/HL/HS/ZC/SELLER-17552598/nike-airmax-tube-shoes-1000x1000.jpg"
-          /> */}
         </Grid>
         <Grid item xs={12} lg={7}>
           <CardContent>
