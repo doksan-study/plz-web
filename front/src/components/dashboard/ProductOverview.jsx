@@ -9,19 +9,22 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 
+import { shoes } from '../../../data/shoesData';
 import { useProductListData } from '../../../hooks/product';
 
 const ProductOverview = () => {
   const router = useRouter();
 
-  const { isLoading, data: productList } = useProductListData();
-
-  console.log('데이터 나오셈======', productList);
+  // FIXME: 잠시 주석
+  // const { isLoading, data: productList } = useProductListData();
+  // console.log('데이터 나오셈======', productList);
 
   return (
     <Grid container spacing={2}>
-      {/* {shoes.map((data, i) => { */}
-      {productList?.data?.data?.map((data, i) => {
+      {shoes.map((data, i) => {
+        {
+          /* {productList?.data?.data?.map((data, i) => { */
+        }
         return (
           <Grid item xs={6} md={4} key={data.id}>
             <Card

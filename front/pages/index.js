@@ -12,7 +12,6 @@ export default function Index() {
     <Grid container spacing={0}>
       <Grid item xs={12} lg={12}>
         {/* <SalesOverview /> */}
-        {/* 배너? */}
         <BannerOverview />
       </Grid>
 

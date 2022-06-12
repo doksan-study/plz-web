@@ -17,41 +17,35 @@ const BannerOverview = () => {
 
   return (
     <>
+      {/* TODO: Grid로 줄어들었을 경우 반응형 고려 */}
+      {/* 배너는 어떤 것을 넣으면 좋을 지 생각해보자 */}
       <Card
         sx={{
           display: 'flex',
           height: 450,
         }}
       >
-        {/* <CardMedia
-          component={'img'}
-          // sx={{ width: '500', objectFit: 'contain' }}
-          image={`${webShoppingSVG}`}
-          alt={webShoppingSVG}
-          // src={require(`/public/static/web_shopping.svg`)}
-        /> */}
-
         <Image
           src={webShoppingSVG}
           alt='web Shopping'
-          style={{ objectFit: 'contain' }}
+          style={{ objectFit: 'cover' }}
         />
 
         <Box
           sx={{
-            width: '40%',
+            width: '60%',
             display: 'flex',
             justifyContent: 'flex-start',
             alignItems: 'center',
           }}
         >
           <CardContent>
-            <Typography variant='h1'>
-              ONLINE <br />
-              SHOPPING
+            <Typography variant='h1' mb={1}>
+              ONLINE SHOPPING
             </Typography>
+            <Typography variant='body1'>상품을 등록하세요!</Typography>
             <Button
-              color='secondary'
+              color='primary'
               size='large'
               variant='contained'
               sx={{
