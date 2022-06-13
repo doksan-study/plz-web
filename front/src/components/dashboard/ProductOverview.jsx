@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Card,
   CardContent,
@@ -6,35 +6,61 @@ import {
   CardMedia,
   Grid,
   Typography,
-} from '@mui/material';
-import { useRouter } from 'next/router';
+} from "@mui/material";
+import { useRouter } from "next/router";
 
-import { shoes } from '../../../data/shoesData';
-import { useProductListData } from '../../../hooks/product';
+import { shoes } from "../../../data/shoesData";
+import { useProductListData } from "../../../hooks/product";
 
 const ProductOverview = () => {
   const router = useRouter();
 
   // FIXME: 잠시 주석
-  // const { isLoading, data: productList } = useProductListData();
-  // console.log('데이터 나오셈======', productList);
+  // const {
+  //   isLoading,
+  //   data: productList,
+  //   isError,
+  //   error,
+  //   isFetching,
+  // } = useProductListData();
+  // console.log("데이터 나오셈======", productList);
+
+  // const Loading = () => {
+  //   if (isLoading || isFetching) {
+  //     return (
+  //       <Grid item xs={12} md={12} sx={{ width: "100%" }}>
+  //         <Card>Loading...</Card>
+  //       </Grid>
+  //     );
+  //   }
+  // };
+
+  // const Error = () => {
+  //   if (isError) {
+  //     return (
+  //       <Grid item xs={12} md={12} sx={{ width: "100%" }}>
+  //         <Card>{error.message}</Card>
+  //       </Grid>
+  //     );
+  //   }
+  // };
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={1}>
+      {/* <Loading /> */}
+      {/* <Error /> */}
+      {/* {productList?.data?.data?.map((data, i) => { */}
       {shoes.map((data, i) => {
-        {
-          /* {productList?.data?.data?.map((data, i) => { */
-        }
         return (
           <Grid item xs={6} md={4} key={data.id}>
             <Card
               sx={{
-                cursor: 'pointer',
-                height: '450px',
+                cursor: "pointer",
+                height: "450px",
               }}
               onClick={() => {
                 router.push({
-                  pathname: '/product/[id]',
+                  pathname: "/product/[id]",
                   query: {
                     id: data.id,
                   },
@@ -43,8 +69,8 @@ const ProductOverview = () => {
             >
               <CardHeader title={data.name} subheader={data.description} />
               <CardMedia
-                component='img'
-                height='194'
+                component="img"
+                height="194"
                 image={
                   data.thumbnail
                     ? data.thumbnail
@@ -58,15 +84,15 @@ const ProductOverview = () => {
               />
               <CardContent
                 sx={{
-                  textAlign: 'center',
+                  textAlign: "center",
                   mt: 2,
                 }}
               >
-                <Typography variant='h4' mb={1}>
+                <Typography variant="h4" mb={1}>
                   {data.description}
                 </Typography>
-                <Typography variant='body1' color='text.secondary'>
-                  {data.cost?.toLocaleString('ko-KR')}원
+                <Typography variant="body1" color="text.secondary">
+                  {data.cost?.toLocaleString("ko-KR")}원
                 </Typography>
               </CardContent>
             </Card>
