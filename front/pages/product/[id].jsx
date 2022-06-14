@@ -11,8 +11,8 @@ import {
   Box,
 } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
+import ProductDetailCard from "../../components/product/productDetailCard";
 
-import ProductDetailCard from "../../src/components/product/productDetailCard";
 
 const ProductDetail = () => {
   const router = useRouter();

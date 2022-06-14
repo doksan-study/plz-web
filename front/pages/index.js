@@ -1,11 +1,9 @@
-import { Card, Grid } from "@mui/material";
-import SalesOverview from "../src/components/dashboard/SalseOverview";
-import DailyActivity from "../src/components/dashboard/DailyActivity";
-import ProductPerfomance from "../src/components/dashboard/ProductPerfomance";
-import ProductOverview from "../src/components/dashboard/ProductOverview";
-import BannerOverview from "../src/components/dashboard/BannerOverview";
+import { Grid } from "@mui/material";
+
 import Footer from "../src/layouts/footer/Footer";
-import CategoryOverview from "../src/components/dashboard/CategoryOverview";
+import BannerOverview from "../components/dashboard/BannerOverview";
+import CategoryOverview from "../components/dashboard/CategoryOverview";
+import ProductOverview from "../components/dashboard/ProductOverview";
 
 export default function Index() {
   return (

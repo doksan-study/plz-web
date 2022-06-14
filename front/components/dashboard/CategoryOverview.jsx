@@ -40,6 +40,7 @@ const CategoryOverview = () => {
           justifyContent: "center",
           alignItems: "center",
           height: "200px",
+          p: 3
         }}
       >
         {/* <Card>카테고리 넣넣</Card> */}
