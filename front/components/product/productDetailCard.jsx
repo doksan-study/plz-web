@@ -9,8 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 
-import { shoes } from "../../../data/shoesData";
-import { useProductDetail } from "../../../hooks/product";
+import { shoes } from "../../data/shoesData";
+import { useProductDetail } from "../../hooks/product";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 

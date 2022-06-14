@@ -9,8 +9,8 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 
-import { shoes } from "../../../data/shoesData";
-import { useProductListData } from "../../../hooks/product";
+import { shoes } from "../../data/shoesData";
+import { useProductListData } from "../../hooks/product";
 
 const ProductOverview = () => {
   const router = useRouter();
@@ -46,7 +46,7 @@ const ProductOverview = () => {
   // };
 
   return (
-    <Grid container spacing={1}>
+    <Grid container spacing={0}>
       {/* <Loading /> */}
       {/* <Error /> */}
       {/* {productList?.data?.data?.map((data, i) => { */}
