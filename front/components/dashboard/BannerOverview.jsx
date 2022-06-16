@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-import webShoppingSVG from '/public/static/web_shopping.svg';
+import webShoppingSVG from '/public/static/dashboard/web_shopping.svg';
 
 import Image from 'next/image';
 

@@ -1,8 +1,12 @@
 import React from "react";
-import { Card, IconButton } from "@mui/material";
+import { Card, CardContent, CardMedia, IconButton } from "@mui/material";
+
+import manImg from "/public/static/dashboard/man.svg";
+import womanImg from "/public/static/dashboard/woman.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import Image from "next/image";
 
 const testCategory = [
   {
@@ -39,8 +43,8 @@ const CategoryOverview = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "200px",
-          p: 3
+          height: "300px",
+          // p: 3,
         }}
       >
         {/* <Card>카테고리 넣넣</Card> */}
@@ -48,12 +52,13 @@ const CategoryOverview = () => {
           modules={[Pagination]}
           style={{
             height: "100%",
+            width: "100%",
           }}
           spaceBetween={30}
           slidesPerView={3}
           pagination={{ clickable: true }}
         >
-          {testCategory.map((data) => {
+          {/* {testCategory.map((data) => {
             return (
               <SwiperSlide
                 key={data.id}
@@ -68,7 +73,31 @@ const CategoryOverview = () => {
                 {data.name}
               </SwiperSlide>
             );
-          })}
+          })} */}
+
+          <SwiperSlide
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          >
+            <Card>
+              <Image src={manImg} alt="man" width={200} height={150} />
+              <CardContent>남성</CardContent>
+            </Card>
+          </SwiperSlide>
+
+          <SwiperSlide
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          >
+            <Card>
+              <Image src={womanImg} alt="man" width={200} height={150} />
+              <CardContent>여성</CardContent>
+            </Card>
+          </SwiperSlide>
         </Swiper>
       </Card>
     </>
