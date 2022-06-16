@@ -1,49 +1,61 @@
-import React from "react";
-import { Card, CardContent, CardMedia, IconButton } from "@mui/material";
+import React from 'react';
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+} from '@mui/material';
 
-import manImg from "/public/static/dashboard/man.svg";
-import womanImg from "/public/static/dashboard/woman.svg";
+import manImg from '/public/static/dashboard/man.svg';
+import womanImg from '/public/static/dashboard/woman.svg';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import Image from 'next/image';
 
 const testCategory = [
   {
     id: 1,
-    name: "카테고리 1",
+    name: '카테고리 1',
   },
   {
     id: 2,
-    name: "카테고리 2",
+    name: '카테고리 2',
   },
   {
     id: 3,
-    name: "카테고리 3",
+    name: '카테고리 3',
   },
   {
     id: 4,
-    name: "카테고리 4",
+    name: '카테고리 4',
   },
   {
     id: 5,
-    name: "카테고리 5",
+    name: '카테고리 5',
   },
   {
     id: 6,
-    name: "카테고리 6",
+    name: '카테고리 6',
   },
 ];
 
 const CategoryOverview = () => {
   return (
     <>
-      <Card
+      <Box
+        sx={{ display: 'flex', width: '100%', justifyContent: 'center', mt: 3 }}
+      >
+        <Typography>카테고리 </Typography>
+      </Box>
+      <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "300px",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '300px',
           // p: 3,
         }}
       >
@@ -51,8 +63,8 @@ const CategoryOverview = () => {
         <Swiper
           modules={[Pagination]}
           style={{
-            height: "100%",
-            width: "100%",
+            height: '100%',
+            width: '100%',
           }}
           spaceBetween={30}
           slidesPerView={3}
@@ -77,29 +89,29 @@ const CategoryOverview = () => {
 
           <SwiperSlide
             style={{
-              height: "100%",
-              width: "100%",
+              height: '100%',
+              width: '100%',
             }}
           >
             <Card>
-              <Image src={manImg} alt="man" width={200} height={150} />
+              <Image src={manImg} alt='man' width={200} height={150} />
               <CardContent>남성</CardContent>
             </Card>
           </SwiperSlide>
 
           <SwiperSlide
             style={{
-              height: "100%",
-              width: "100%",
+              height: '100%',
+              width: '100%',
             }}
           >
             <Card>
-              <Image src={womanImg} alt="man" width={200} height={150} />
+              <Image src={womanImg} alt='man' width={200} height={150} />
               <CardContent>여성</CardContent>
             </Card>
           </SwiperSlide>
         </Swiper>
-      </Card>
+      </Box>
     </>
   );
 };

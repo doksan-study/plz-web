@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "@mui/material";
-import Image from "next/image";
-import LogoDark from "../../../assets/images/logos/logo-dark.svg";
+import React from 'react';
+import { Link } from '@mui/material';
+import Image from 'next/image';
+import LogoDark from '/public/static/images/logos/logo-dark.svg';
 
 const LogoIcon = () => {
   return (
-    <Link href="/">
+    <Link href='/'>
       <Image src={LogoDark} alt={LogoDark} />
     </Link>
   );
