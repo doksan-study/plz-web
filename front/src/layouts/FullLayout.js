@@ -37,11 +37,13 @@ const FullLayout = ({ children }) => {
     <MainWrapper>
       <Header
         sx={{
+          // FIXME: 잠시 주석
           paddingLeft: isSidebarOpen && lgUp ? '265px' : '',
           backgroundColor: '#fbfbfb',
         }}
         toggleMobileSidebar={() => setMobileSidebarOpen(true)}
       />
+      {/* FIXME: 잠시 주석 */}
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         isMobileSidebarOpen={isMobileSidebarOpen}
@@ -52,6 +54,7 @@ const FullLayout = ({ children }) => {
           maxWidth={false}
           sx={{
             paddingTop: '20px',
+            // FIXME: 잠시 주석
             paddingLeft: isSidebarOpen && lgUp ? '280px!important' : '',
           }}
         >
