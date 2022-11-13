@@ -7,6 +7,7 @@ export default ({ isSidebarOpen, lgUp, toggleMobileSidebar }: any) => {
       sx={{
         paddingLeft: isSidebarOpen && lgUp ? "265px" : "",
         backgroundColor: "#fbfbfb",
+        fontFamily: "Jalnan",
       }}
     >
       <Toolbar>

@@ -1,5 +1,6 @@
 import { Box, Button, Drawer, useMediaQuery } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import SidebarContents from "../components/SidebarContents";
 import theme from "../theme/theme";
 
 export default ({
@@ -23,7 +24,7 @@ export default ({
           },
         }}
       >
-        <Button>사이드바 컨텐츠1</Button>
+        <SidebarContents onSidebarClose={onSidebarClose} />
       </Drawer>
     );
   }
@@ -41,7 +42,7 @@ export default ({
         },
       }}
     >
-      <Button>사이드바 컨텐츠2</Button>
+      <SidebarContents onSidebarClose={onSidebarClose} />
     </Drawer>
   );
 };

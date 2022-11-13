@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React from "react";
 import DefaultLayout from "../layouts/DefaultLayout";
 // import DefaultLayout from "../layouts/DefaultLayout";
@@ -5,7 +6,7 @@ import DefaultLayout from "../layouts/DefaultLayout";
 export default function Home() {
   return (
     <DefaultLayout>
-      <div>
+      <Typography variant="body1">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus
         itaque libero et, nesciunt veritatis debitis, quod laborum ipsum ea enim
         optio est mollitia maxime soluta nisi velit illum tempore saepe! Lorem
@@ -17,7 +18,7 @@ export default function Home() {
         harum aut voluptate expedita dolorum soluta possimus. Nisi, nesciunt
         reprehenderit necessitatibus numquam incidunt voluptatibus repellendus
         iusto.
-      </div>
+      </Typography>
     </DefaultLayout>
   );
 }

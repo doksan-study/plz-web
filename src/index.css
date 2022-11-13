@@ -1,0 +1,8 @@
+.App {
+  font-family: "jalnan";
+}
+
+@font-face {
+  font-family: "jalnan";
+  src: url("../assets/fonts/Jalnan.ttf");
+}
