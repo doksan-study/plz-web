@@ -1,4 +1,4 @@
-import { Box, List, ListItem, ListItemText } from "@mui/material";
+import { Box, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { MenuItems } from "../hooks/MenuItems";
@@ -33,16 +33,18 @@ export default ({ onSidebarClose }: any) => {
                       borderRadius: 3,
                     }}
                   >
-                    {/* <ListItemIcon>
-                    <FeatherIcon
-                      style={{
-                        // color: `${location === item.href ? "white" : ""} `,
-                      }}
-                      icon={item.icon}
-                      width="20"
-                      height="20"
-                    />
-                  </ListItemIcon> */}
+                    <ListItemIcon>
+                      {/* <FeatherIcon
+                        style={
+                          {
+                            // color: `${location === item.href ? "white" : ""} `,
+                          }
+                        }
+                        icon={item.icon}
+                        width="20"
+                        height="20"
+                      /> */}
+                    </ListItemIcon>
 
                     <ListItemText onClick={onSidebarClose}>
                       {item.title}

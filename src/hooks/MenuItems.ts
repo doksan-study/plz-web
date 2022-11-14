@@ -1,8 +1,10 @@
+import { AiFillHome } from "react-icons/ai";
+
 export const MenuItems = [
   {
     title: "Home",
     icon: "home",
-    href: "/",
+    href: "",
   },
   {
     title: "login",
