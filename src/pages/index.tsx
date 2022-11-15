@@ -1,10 +1,12 @@
 import { Typography } from "@mui/material";
 import React from "react";
+import Loading from "../components/Loading";
 import DefaultLayout from "../layouts/DefaultLayout";
 // import DefaultLayout from "../layouts/DefaultLayout";
 
 export default function Home() {
   return (
+    // <Loading />
     <DefaultLayout>
       <Typography variant="body1">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus

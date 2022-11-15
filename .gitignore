@@ -1,6 +1,8 @@
 # enviroment
 .env
 
+api
+
 # Logs
 logs
 *.log

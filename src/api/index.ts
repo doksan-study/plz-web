@@ -8,4 +8,8 @@ export const api = axios.create({
   baseURL: getAPIHost(),
 });
 
+export const setToken = (token: any) => {
+  sessionStorage.setItem("token", token);
+};
+
 export default api;

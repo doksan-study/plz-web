@@ -8,6 +8,7 @@ export const authSlice = createSlice({
   reducers: {
     setPrincipal: (state, action) => {
       state.principal = action.payload;
+      window.sessionStorage.setItem("principal", action.payload);
     },
     clearPrincipal: (state, action) => {
       state.principal = undefined;

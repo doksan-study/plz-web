@@ -2,8 +2,10 @@ import { Container, Stack, TextField, Typography, styled } from "@mui/material";
 import React, { useCallback, useState } from "react";
 import { LoadingButton } from "@mui/lab";
 import { useDispatch } from "react-redux";
-import api from "../../api";
+import api, { setToken } from "../../api";
 import { useNavigate } from "react-router-dom";
+import { setPrincipal } from "../../redux/authReducer";
+import Loading from "../../components/Loading";
 
 const StyledContent = styled("div")(({ theme }) => ({
   maxWidth: 480,
@@ -42,15 +44,21 @@ export default () => {
     try {
       setLoading(true);
 
-      const res = await api.post(`/user/login`, {
+      const { data: loginData } = await api.post(`/user/login`, {
         email,
         password,
       });
 
-      console.log("data: ", res);
+      const token = loginData.data;
+      await setToken(token);
 
-      // 리덕스에 저장 및 쿠키 저장
-      // navigation("/");
+      const { data } = await api.get(`/user/me`, {
+        headers: { authorization: `Bearer ${token}` },
+      });
+
+      const userData = data.data;
+
+      await dispatch(setPrincipal(userData));
     } catch (error) {
       console.log("error: ", error);
     } finally {
@@ -59,7 +67,7 @@ export default () => {
   };
 
   if (loading) {
-    return <div>...</div>;
+    return <Loading />;
   }
 
   return (
@@ -87,7 +95,7 @@ export default () => {
         <LoadingButton
           fullWidth
           size="large"
-          type="submit"
+          // type="submit"
           variant="contained"
           onClick={onHandleLogin}
         >

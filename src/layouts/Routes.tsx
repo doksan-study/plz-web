@@ -6,13 +6,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "../pages/auth/Login";
 import RegisterStepOne from "../pages/auth/RegisterStepOne";
 import Home from "../pages";
+import useUserInfo from "../hooks/useUserInfo";
 
 export default () => {
+  const userInfo = useUserInfo();
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        {!userInfo ? (
+          <Route path="/" element={<Login />} />
+        ) : (
+          <Route path="/" element={<Home />} />
+        )}
       </Routes>
     </BrowserRouter>
   );
