@@ -10,8 +10,10 @@ export const authSlice = createSlice({
       state.principal = action.payload;
       window.sessionStorage.setItem("principal", action.payload);
     },
-    clearPrincipal: (state, action) => {
+    clearPrincipal: (state) => {
       state.principal = undefined;
+      window.sessionStorage.clear();
+      // window.sessionStorage.setItem("principal", "");
     },
   },
 });

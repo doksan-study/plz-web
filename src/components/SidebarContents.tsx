@@ -11,9 +11,23 @@ export default ({ onSidebarClose }: any) => {
   const { pathname } = useLocation();
 
   return (
-    <Box p={2} height="100%">
-      <div>로고</div>
-      <Box mt={2}>
+    <Box
+      p={2}
+      height="100%"
+      sx={{
+        borderRight: "1px solid #D2D2D2",
+      }}
+    >
+      <div
+        style={{
+          paddingLeft: "10px",
+          fontSize: 22,
+          letterSpacing: 1.2,
+        }}
+      >
+        Logo Name
+      </div>
+      <Box mt={3}>
         <List>
           {MenuItems.map((item, index) => {
             return (
@@ -33,19 +47,6 @@ export default ({ onSidebarClose }: any) => {
                       borderRadius: 3,
                     }}
                   >
-                    <ListItemIcon>
-                      {/* <FeatherIcon
-                        style={
-                          {
-                            // color: `${location === item.href ? "white" : ""} `,
-                          }
-                        }
-                        icon={item.icon}
-                        width="20"
-                        height="20"
-                      /> */}
-                    </ListItemIcon>
-
                     <ListItemText onClick={onSidebarClose}>
                       {item.title}
                     </ListItemText>

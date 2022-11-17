@@ -29,19 +29,6 @@ const theme = createTheme({
       `,
     },
   },
-  // typography: {
-  //   fontFamily: "Jalnan",
-  // },
-  // components: {
-  //   MuiCssBaseline: {
-  //     styleOverrides: `
-  //       @font-face {
-  //         font-family: 'Jalnan';
-  //         src: url(${Jalnan})
-  //       }
-  //     `,
-  //   },
-  // },
 });
 
 export default theme;
