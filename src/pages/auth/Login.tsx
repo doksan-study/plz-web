@@ -1,4 +1,14 @@
-import { Container, Stack, TextField, Typography, styled } from "@mui/material";
+import {
+  Container,
+  Stack,
+  TextField,
+  Typography,
+  styled,
+  Button,
+  Link,
+  Grid,
+  Box,
+} from "@mui/material";
 import React, { useCallback, useState } from "react";
 import { LoadingButton } from "@mui/lab";
 import { useDispatch } from "react-redux";
@@ -7,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { setPrincipal } from "../../redux/authReducer";
 import Loading from "../../components/Loading";
 
-const StyledContent = styled("div")(({ theme }) => ({
+const LoginContainer = styled("div")(({ theme }) => ({
   maxWidth: 480,
   margin: "auto",
   minHeight: "100vh",
@@ -16,10 +26,13 @@ const StyledContent = styled("div")(({ theme }) => ({
   flexDirection: "column",
 }));
 
+// const RegisterButton = styled('')
+
+// FIXME: View
 export default () => {
   const dispatch = useDispatch<any>();
 
-  const navigation = useNavigate();
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -50,7 +63,7 @@ export default () => {
       });
 
       const token = loginData.data;
-      await setToken(token);
+      setToken(token);
 
       const { data } = await api.get(`/user/me`, {
         headers: { authorization: `Bearer ${token}` },
@@ -71,46 +84,63 @@ export default () => {
   }
 
   return (
-    <Container>
-      <StyledContent>
-        <Typography variant="h4" gutterBottom mb={8}>
-          Login
-        </Typography>
+    <Container component={"main"} maxWidth="xs">
+      <LoginContainer>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          <Typography variant="h4" gutterBottom mb={4}>
+            Login
+          </Typography>
+        </Box>
 
-        <Stack spacing={3} mb={5}>
-          <TextField
-            name="email"
-            label="Email"
-            value={email}
-            onChange={onChangeEmail}
-          />
-          <TextField
-            name="password"
-            label="Password"
-            value={password}
-            onChange={onChangePassoword}
-          />
-        </Stack>
+        <TextField
+          value={email}
+          onChange={onChangeEmail}
+          margin="normal"
+          label="Email"
+          required
+          fullWidth
+          name="email"
+          autoComplete="email"
+          autoFocus
+        />
+
+        <TextField
+          value={password}
+          onChange={onChangePassoword}
+          margin="normal"
+          label="Password"
+          type={"password"}
+          required
+          fullWidth
+          name="passoword"
+          autoComplete="password"
+        />
 
         <LoadingButton
+          onClick={() => onHandleLogin()}
           fullWidth
           size="large"
-          // type="submit"
           variant="contained"
-          onClick={onHandleLogin}
+          sx={{ mt: 3, mb: 2 }}
         >
           Login
         </LoadingButton>
-      </StyledContent>
+
+        <Grid container>
+          <Grid item xs>
+            <Link>Forgot Password?</Link>
+          </Grid>
+          <Grid item>
+            <Link>SignUp</Link>
+          </Grid>
+        </Grid>
+      </LoginContainer>
     </Container>
   );
 };
-
-// const LoginContainer = styled.div`
-//   max-width: 480px;
-//   min-height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   background-color: gray;
-// `;

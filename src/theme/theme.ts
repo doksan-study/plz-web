@@ -13,22 +13,22 @@ const theme = createTheme({
       main: "#1E4DB6",
     },
   },
-  typography: {
-    fontFamily: "JUA",
-    body1: {
-      fontWeight: 300,
-    },
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: `
-        @font-face {
-          font-family: 'JUA';
-          src: url(${JUA})
-        }
-      `,
-    },
-  },
+  // typography: {
+  //   fontFamily: "JUA",
+  //   body1: {
+  //     fontWeight: 300,
+  //   },
+  // },
+  // components: {
+  //   MuiCssBaseline: {
+  //     styleOverrides: `
+  //       @font-face {
+  //         font-family: 'JUA';
+  //         src: url(${JUA})
+  //       }
+  //     `,
+  //   },
+  // },
 });
 
 export default theme;

@@ -1,7 +1,7 @@
 import { Box, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { MenuItems } from "../hooks/MenuItems";
+import { MenuItems } from "../../hooks/MenuItems";
 
 export default ({ onSidebarClose }: any) => {
   const [open, setOpen] = useState<boolean>(true);

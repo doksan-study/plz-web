@@ -23,11 +23,13 @@ export default () => {
 
   const [loading, setLoading] = useState(true);
 
+  const userInfo = useUserInfo();
+
   // 세션에 토큰이 있으면 자동 로그인
   useEffect(() => {
     const loadPrincipal = async () => {
       try {
-        const token = await sessionStorage.getItem("token");
+        const token = sessionStorage.getItem("token");
 
         if (!token) return;
 
@@ -49,8 +51,6 @@ export default () => {
       setLoading(false);
     }, 400);
   }, [dispatch]);
-
-  const userInfo = useUserInfo();
 
   if (loading) {
     return <Loading />;

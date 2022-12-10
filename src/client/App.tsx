@@ -1,8 +1,8 @@
 import { ThemeProvider } from "@emotion/react";
-import { CssBaseline } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 import React from "react";
 import { Provider } from "react-redux";
-import Routes from "../layouts/Routes";
+import Routes from "./Routes";
 import store from "../redux/store";
 import theme from "../theme/theme";
 
