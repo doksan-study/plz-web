@@ -3,7 +3,7 @@ import { AiFillHome } from "react-icons/ai";
 export const MenuItems = [
   {
     title: "Home",
-    href: "",
+    href: "/",
   },
   {
     title: "특가 상품",

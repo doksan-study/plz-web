@@ -1,54 +1,54 @@
-// import { Box, Button, Drawer, useMediaQuery } from "@mui/material";
-// import React, { useState } from "react";
-// import SidebarContents from "../../components/sidebar/SidebarContents";
-// import theme from "../../theme/theme";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import useResponsive from "../../hooks/useResponsive";
 
-// export default ({
-//   isSidebarOpen,
-//   isMobileSidebarOpen,
-//   onSidebarClose,
-// }: any) => {
-//   const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
+import SidebarContents from "../../components/sidebar/SidebarContents";
+import { Box, Drawer } from "@mui/material";
 
-//   if (lgUp) {
-//     return (
-//       <Drawer
-//         anchor="left"
-//         open={isSidebarOpen}
-//         variant="persistent"
-//         PaperProps={{
-//           sx: {
-//             width: "265px",
-//             border: "0 !important",
-//             boxShadow: "0px 7px 30px 0px rgb(113 122 131 / 11%)",
-//           },
-//         }}
-//       >
-//         <SidebarContents onSidebarClose={onSidebarClose} />
-//       </Drawer>
-//     );
-//   }
+const SIDEBAR_WIDTH = 280;
 
-//   return (
-//     <Drawer
-//       anchor="left"
-//       open={isMobileSidebarOpen}
-//       onClose={onSidebarClose}
-//       variant="temporary"
-//       PaperProps={{
-//         sx: {
-//           width: "265px",
-//           border: "0 !important",
-//         },
-//       }}
-//     >
-//       <SidebarContents onSidebarClose={onSidebarClose} />
-//     </Drawer>
-//   );
-// };
-
-import React from "react";
-
-export default function Sidebar() {
-  return <div>Sidebar</div>;
+interface ISidebar {
+  isSidebarOpen: boolean;
+  onCloseSidebar: () => void;
 }
+
+export default ({ isSidebarOpen, onCloseSidebar }: ISidebar) => {
+  const { pathname } = useLocation();
+
+  const isDesktop = useResponsive("up", "lg");
+
+  // 사이드바
+  useEffect(() => {
+    if (isSidebarOpen) {
+      onCloseSidebar();
+    }
+  }, [pathname]);
+
+  return (
+    <Box component={"nav"} sx={{ width: { lg: SIDEBAR_WIDTH } }}>
+      {isDesktop ? (
+        <Drawer
+          open
+          variant="permanent"
+          PaperProps={{
+            sx: {
+              width: SIDEBAR_WIDTH,
+            },
+          }}
+        >
+          <SidebarContents />
+        </Drawer>
+      ) : (
+        <Drawer
+          open={isSidebarOpen}
+          onClose={onCloseSidebar}
+          PaperProps={{
+            sx: { width: SIDEBAR_WIDTH },
+          }}
+        >
+          <SidebarContents />
+        </Drawer>
+      )}
+    </Box>
+  );
+};

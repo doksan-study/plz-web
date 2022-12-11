@@ -1,5 +1,10 @@
 import React from "react";
+import DefaultLayout from "../../layouts/DefaultLayout";
 
 export default () => {
-  return <div>New</div>;
+  return (
+    <DefaultLayout>
+      <div>new</div>
+    </DefaultLayout>
+  );
 };

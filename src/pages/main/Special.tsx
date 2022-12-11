@@ -1,5 +1,10 @@
 import React from "react";
+import DefaultLayout from "../../layouts/DefaultLayout";
 
 export default () => {
-  return <div>Special</div>;
+  return (
+    <DefaultLayout>
+      <div>특가제품</div>
+    </DefaultLayout>
+  );
 };
